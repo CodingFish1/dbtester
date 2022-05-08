@@ -17,7 +17,7 @@ mongoose.connect(DB)
             console.log('Connected to the DB...')
         })
         .catch((err) => {
-            console.log(err);
+            console.log('DB Connection Errors');
         })
 
 // // Setup a schema
