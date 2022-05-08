@@ -17,7 +17,7 @@ mongoose.connect(DB)
             console.log('Connected to the DB...')
         })
         .catch((err) => {
-            console.log('DB Connection Errors');
+            console.log(err);
         })
 
 // // Setup a schema
@@ -82,8 +82,8 @@ Room.create(
     ).then (() => {
         console.log('第二种方式资料写入成功')
     }
-    ).catch(() => {
-        console.log('失败了')
+    ).catch((err) => {
+        console.log(err)
     })
 
 
