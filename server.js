@@ -38,21 +38,21 @@ mongoose.connect(DB)
 //             required: [true,"Don't leave it empty"]
 //         },
 //         rating: Number,
-//         createdAt: { // 自定义时间戳格式，这是只要createdAt而不要updatedAt的设置
+//         createdAt: { // 自定義時間戳格式，這是只要createdAt而不要updatedAt的設置
 //             type: Date,
-//             default: Date.now, // 如果没有传入时间，则使用当前时间
-//             select: false //若前台使用find()，不会回传显示，保密资料
+//             default: Date.now, // 如果沒有傳入時間，則使用當前時間
+//             select: false //若前台使用find()，不會回傳資料資安考量
 //         },
 //     },
 //     {//下面是default option
 //         versionKey: false, // 不加versionKey
-//         // collection: 'room' // 自定collection名称，不受model自动更名影响，不过建议DB名称加s以区分instance
-//         timestamps:false //创建和修改资料时加入时间戳。若有自定义时间戳，要将此处设为false
+//         // collection: 'room' // 自定collection名稱，不受model自動更名影響，不過建議DB名稱加s以區分instance
+//         timestamps:false //創建和修改資料時加入時間戳。若有自定義時間戳，要將此處設爲false
 //     }
 // )
 
 // // Model for schema
-// // 如果Schema不做设定，则Collection的命名会自动：大写转小写且结尾加s，“Room”的例子就是rooms
+// // 若Schema不做設定，則Collection的命名會自動：大寫轉小寫且s，如Room變爲rooms
 // const Room = mongoose.model('Room',roomSchemaB)
 
 // //Add information, add a new instance regularied by  the schema and model
@@ -63,7 +63,7 @@ mongoose.connect(DB)
 // //         rating: 4.5
 // //     }
 // // )
-// // 首先new出一个实例，然后用save储存
+// // 首先new出一個實例，然後用save儲存
 // //  testRoom.save()
 // //     .then(() => {
 // //         console.log('Success add a new recording')
@@ -72,7 +72,7 @@ mongoose.connect(DB)
 // //         console.log(error)
 // //     })
 
-// 新增资料的第二种方式
+// 新增資料的第二種方式
 Room.create(
     {
         name: "ABC room",
@@ -80,10 +80,10 @@ Room.create(
         rating: 4.5
     }
     ).then (() => {
-        console.log('第二种方式资料写入成功')
+        console.log('Inserted a New Recording-Type2')
     }
     ).catch((err) => {
-        console.log(err)
+        console.log('Error Inserting New Recording')
     })
 
 
